@@ -1,0 +1,33 @@
+{
+  "name": "character-generator",
+  "version": "1.0.0",
+  "description": "A simple plugin to extend the RAVE Dice Roller into a TTRPG Character Generator.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravewebdev/character-generator.git"
+  },
+  "keywords": [
+    "role-playing",
+    "rpg",
+    "table-top",
+    "character",
+    "generator"
+  ],
+  "author": "R A Van Epps",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ravewebdev/character-generator/issues"
+  },
+  "homepage": "https://github.com/ravewebdev/character-generator#readme",
+  "devDependencies": {
+    "@webdevstudios/css-coding-standards": "^1.0.1",
+    "@webdevstudios/js-coding-standards": "^1.1.1",
+    "@wordpress/scripts": "^12.1.1"
+  },
+  "dependencies": {}
+}
