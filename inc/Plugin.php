@@ -100,6 +100,7 @@ final class Plugin {
 	 */
 	public function enqueue_scripts() {
 		$script = 'build/index.js';
+		$style  = 'build/style.css';
 
 		// Verify script exists.
 		if ( ! file_exists( $this->path . $script ) ) {
@@ -108,8 +109,13 @@ final class Plugin {
 
 		wp_register_script( 'character-generator-script', $this->url . $script, [], self::VERSION, true );
 
+		if ( file_exists( $this->path . $style ) ) {
+			wp_register_style( 'character-generator-style', $this->url . $style, [], self::VERSION );
+		}
+
 		if ( ! is_admin() ) {
 			wp_enqueue_script( 'character-generator-script' );
+			wp_enqueue_style( 'character-generator-style' );
 		}
 	}
 }
