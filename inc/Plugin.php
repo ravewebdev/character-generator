@@ -88,5 +88,28 @@ final class Plugin {
 	 * @author R A Van Epps <rave@ravanepps.com>
 	 * @since  1.0.0
 	 */
-	protected function register_hooks() {}
+	protected function register_hooks() {
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+	}
+
+	/**
+	 * Enqueue plugin scripts.
+	 *
+	 * @author R A Van Epps <rave@ravanepps.com>
+	 * @since  1.0.0
+	 */
+	public function enqueue_scripts() {
+		$script = 'build/index.js';
+
+		// Verify script exists.
+		if ( ! file_exists( $this->path . $script ) ) {
+			wp_die( esc_html__( 'Whoops! You need to run `npm run build` for the Character Generator plugin first.', 'character-generator' ) );
+		}
+
+		wp_register_script( 'character-generator-script', $this->url . $script, [], self::VERSION, true );
+
+		if ( ! is_admin() ) {
+			wp_enqueue_script( 'character-generator-script' );
+		}
+	}
 }
