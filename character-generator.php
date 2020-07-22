@@ -31,7 +31,7 @@ require 'vendor/autoload.php';
  * @return Plugin Instance of Plugin class.
  */
 function character_generator() {
-	return Plugin::get_instance();
+	return Plugin::get_instance( __FILE__ );
 }
 
 // Init plugin class.
