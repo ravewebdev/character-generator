@@ -100,7 +100,7 @@ final class Plugin {
 	 */
 	public function enqueue_scripts() {
 		$script     = 'build/index.js';
-		$style      = 'build/style.css';
+		$style      = 'build/style-index.css';
 		$asset_file = require $this->path . 'build/index.asset.php';
 
 		// Verify script exists.
