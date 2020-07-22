@@ -99,18 +99,19 @@ final class Plugin {
 	 * @since  1.0.0
 	 */
 	public function enqueue_scripts() {
-		$script = 'build/index.js';
-		$style  = 'build/style.css';
+		$script     = 'build/index.js';
+		$style      = 'build/style.css';
+		$asset_file = require $this->path . 'build/index.asset.php';
 
 		// Verify script exists.
 		if ( ! file_exists( $this->path . $script ) ) {
 			wp_die( esc_html__( 'Whoops! You need to run `npm run build` for the Character Generator plugin first.', 'character-generator' ) );
 		}
 
-		wp_register_script( 'character-generator-script', $this->url . $script, [], self::VERSION, true );
+		wp_register_script( 'character-generator-script', $this->url . $script, $asset_file['dependencies'], $asset_file['version'], true );
 
 		if ( file_exists( $this->path . $style ) ) {
-			wp_register_style( 'character-generator-style', $this->url . $style, [], self::VERSION );
+			wp_register_style( 'character-generator-style', $this->url . $style, [], $asset_file['version'] );
 		}
 
 		if ( ! is_admin() ) {
