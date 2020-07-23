@@ -45,4 +45,13 @@ blocks.forEach( ( block ) => {
 
 	// Place button at top of block group.
 	innerBlock.insertBefore( newButton, innerBlock.firstChild );
+
+	// Trigger individual buttons on new button click.
+	newButton.addEventListener( 'click', function() {
+		buttons.forEach( ( button ) => {
+
+			// Roll dice.
+			button.click();
+		} );
+	} );
 } );
