@@ -9,7 +9,7 @@ This plugin extends the RAVE Dice Roller block to create a simple character gene
 1. Ensure the [`dice-roller` block plugin](https://github.com/ravewebdev/dice-roller) is installed and activated.
 2. Upload the `character-generator` folder to the `/wp-content/plugins` directory.
 3. Activate the Character Generator plugin through the 'Plugins' menu in WordPress.
-4. Import the Character Generator reusable block by uploading `character-generator.json` in the Blocks CPT admin area.
+4. Import the Character Generator reusable block by uploading `assets/character-generator.json` in the Blocks CPT admin area.
 5. Add the 'Character Generator' block in a post or page.
 6. Save and view your page or post.
 7. Click 'Roll Dice' to generate die results for all ability scores.
